@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Layout Fronted Class-Float</title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <meta name='viewport' content='width=device-width, initial-scale=1'>
+   <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+   
+   <style>
+    *{
+       margin: 0px;
+	   padding: 0px;
+	   box-sizing: border-box;
+	   
+    }
+	html, body
+	{
+		font-family:sans-serif;
+		
+	}
+	#header
+	{
+		width: 100%;
+		height: 80px;
+		
+	}
+	#header .container
+	{
+		width: 1140px;
+		margin: 0px auto;
+		height: 80px;
+	}
+	#header .container .logo a
+	{
+		width: 350px;
+		float: left;
+	}
+	#header .container .logo a
+	{
+		text-decoration: none;
+		font-size: 30px;
+		font-weight: 800;
+		color: #000000;
+		display: block;
+		line-height: 80px;
+	}
+	#header .container .contact-info
+	{
+		float: left;
+		width: 790px;
+		height: 80px;
+	
+	}
+	#header .container .contact-info ul
+	{
+		margin: 0px;
+		padding: 0px;
+	}
+	#header .container .contact-info ul li
+	{
+		list-style: none;
+		display: inline-block;
+		height: 80px;
+		margin-left: 55px;
+		
+	}
+	#header .container .contact-info ul li .contact-icon
+	{
+		float: left;
+		height: 80px;
+		width: 35px;
+		line-height: 80px;	
+		
+	}
+	
+	#header .container .contact-info ul li .contact-text
+	{
+		float: left;
+		height: 80px;
+		color: rgba(0, 0, 0, 0.7);			
+	}
+	
+	#header .container .contact-info ul li .contact-text label
+	{
+		width: 100%;
+		display: block;
+		font-weight: bold;
+		margin-top: 20px;
+	}
+	.fa fa-paper-plane-o, .fa fa-phone
+	{
+		font-size: 22px;
+		color: #CC33FF;
+	}
+	#header .container .contact-info ul li a.register
+	{
+		text-decoration: none;
+		display: block;
+		color: #FFFFFF;
+		width: 250px;
+		border-radius: 40px;
+		text-align: center;
+		background-color: #0033FF;
+		font-size: 16px;
+		height: 40px;
+		line-height: 40px;
+		float: left;
+		margin-top: 20px;
+		
+	}
+	
+	#nav
+	{
+		width: 100%;
+		background-color: #0d1128;
+		height: 50px;
+	}
+	#nav .container
+	{
+		width: 1140px;
+		margin: 0px auto; 
+		
+	}
+	#nav .container ul.menu
+	{
+		margin: 0px;
+		padding: 0px;
+		width: 740px;
+		float: left;
+		
+	}
+	#nav .container ul.menu li
+	{
+		list style: none;
+		display: inline-block;	
+	}
+	
+	#nav .container ul.menu li a
+	{
+		text-decoration: none;
+		height: 50px;
+		display: block;
+		line-height: 50px;
+		color: gray;
+		margin-left: 40px;	
+	}
+	
+	#nav .container ul.menu li:first-child a
+	{
+		color: #1b9ce3;
+	}
+	#nav .form-research
+	{
+		width: 400px;
+		float: right;
+		position: relative;
+		
+		
+	}
+	#nav .form-search .keyword
+	{
+		width: 30%;
+		font-size: 16px;
+		border: 1px solid #999;
+		height: 40px;
+		margin-top: 10px;
+		text-indent: 15px;
+		border-radius: 40px;
+		color: rbga(255, 255, 255, 0.7);
+		background: transparent;
+	}
+	
+	#nav .form-search .btn-search
+	{
+		width: 25px;
+		height: 25px;
+		border: none;
+		position: absolute;
+		margin-top: 20px;
+		right: 140px;
+		background: transparent;
+		
+		
+	}
+	.fa fa-search
+	{
+		font-size: 26px;
+		color: #999;
+		cursor: pointer;	
+	}
+	#banner
+	{
+		width: 100%;
+		height: 450px;
+		overflow: hidden;
+		position: relative;
+	}
+	#banner img
+	{
+		width: 100%;
+		
+	}
+	#banner .overlay
+	{
+		display: block;
+		width: 100%;
+		height: 450px;
+		background: #000000;
+		position: absolute;
+		top: 0px;
+		left:: 0px;
+		opacity: .3;
+	}
+	#feature
+	{
+		width: 100%;
+		
+	}
+	#feature .container
+	{
+		width: 1140px;
+		margin: 60px auto;
+		min-height: 300px;
+		
+	}
+	#feature .container .feature-left, #feature .container .feature-right
+	{
+		float: left;	
+		
+	}
+	#feature .container .feature-left
+	{
+		width: 750px;
+		
+		
+	}
+	#feature .container .feature-left .card
+	{
+		background-color: #f0f9fd;
+		float: left;
+		width: 320px;
+		height: 320px;
+		display: block;
+		margin-right: 50px;
+		padding: 20px 30px;
+		margin-bottom: 50px;
+		position: relative;/*vi position trong feature .container .feature-left .active-card: after la absolute, nen the bao ngoai no phai co position: relative*/
+	}
+	#feature .container .feature-left .desc
+	{
+		padding: 15px 15px 30px 0px;
+	
+	}
+	
+	#feature .container .feature-left .card .icon /*dinh nghia cho icon*/
+	{
+		text-align: center;/*de icon nam chinh giua*/
+		color: #1b9ce3;
+		font-size: 50px;
+		margin-top: 20px;
+	}
+	#feature .container .feature-left .card h2
+	{
+		text-align: center;
+		margin-top: 15px;
+		color: #233e62;
+		margin-bottom:: 30px; /*cho h2 cach icon*/
+	}
+	#feature .container .feature-left .card p
+	{
+		line-height: 27px;
+		color: gray;
+		text-align: center;
+		font-size: 16px;
+	}
+	
+	#feature .container .feature-left .active-card
+	{
+		background: #1b9ce3;
+		
+	}
+	#feature .container .feature-left .active-card .active-icon,
+	#feature .container .feature-left .active-card .text-active 
+	
+	{
+		color: #FFFFFF;
+	}
+	
+	#feature .container .feature-left .card:after/*cat goc bia cua tat ca cac the card*/
+	{
+	    content: '';
+		border-style: solid;
+		border-width: 0 50px 50px 0;
+		height: 0;
+		width: 0;
+		position: absolute;
+		right: 0px;
+		top: 0px;
+		border-color: transparent #fff transparent transparent; /*tren duoi trai phai*/
+	}
+	h2.feature-title
+	{
+		color: #233e62;
+		font-weight: 700;
+		font-size: 32px;
+		
+	}
+	
+	
+	#feature .container .feature-right
+	{
+		width: 340px;/*vi ben trai +ben phai= 15*2 = 30-->width = 390-30=360, sau do tru di do day border--> width = 350 */
+		padding: 15px;
+		border: 5px solid #d1ebf9;
+		
+		height: 460px;
+	}
+	#feature .container .feature-right img
+	{
+		width: 90%;
+		margin-top: 15px;
+		margin-left: 15px;
+		margin-right: 25px;
+		margin-bottom: 25px;/*de day xuong*/
+		
+		
+	}
+	
+	#feature .container .feature-right h3
+	{
+	    font-size: 18px;
+		color: #233e62;
+		margin-bottom: 20px;/*de day xuong*/
+		text-align: center;
+		
+	}
+	
+	#feature .container .feature-right p
+	{
+		color: gray;
+		font-size: 16px;
+		text-align: justify;
+		
+	}
+	#feature .container .feature-right a.contact-us
+    {
+		display: block;/*make it into a block element to create button*/
+	    text-decoration: none;
+		width: 120px;
+		height: 40px;
+		border-radius: 20px;
+		background: #1b9ce3;
+		line-height: 40px;/*can chu o giua khoang trong ô*/
+		text-align: center;
+		color:#FFFFFF;
+		margin-top: 20px;
+	}
+	.guidance
+	{
+	    width: 100%;
+		height: 260px;
+        background-image: url("https://huberwindowcleaning.com/wp-content/uploads/2016/08/IMG_0212-1917.jpg");
+	   background-repeat:: no-repeat;
+	   background-position: center;
+	   background-size: cover;
+	   position: relative;
+	   clear: both; /*do bi tran len phia tren (anh huong float) nen phai clear*/
+	   
+		
+	}
+	
+	.guidance:after/*co the dung the div tao hieu ung overlay thay vi dung after"https://www.w3schools.com/howto/howto_css_overlay.asp"*/
+	{
+		position: absolute;
+		top: 0px;
+		left:0px;
+		bottom: 0px;
+		right: 0px;
+		content: '';/*da dung after nhat dinh phai co yeu to content*/
+		opacity: 0.5;
+		
+		background: linear-gradient(to right, #1566ad 0%, #1b9de3 100%);/*https://www.w3schools.com/css/css3_gradients.asp*/
+	}
+	
+	.guidance h2
+	{
+		text-align: center;
+		color: #000000;
+		line-height: 260px;
+		font-weight: bold;
+	}
+	
+	#service
+	{
+		width: 100%;
+	}
+	#service .container
+	{
+		width: 1140px;
+		margin: 100px auto;/*cach top 100px*/
+	}
+	#service .container h3
+	{
+	    color: #233e62;
+		text-align: center;
+	}
+	#service .container p.desc
+	{
+	    padding: 20px 0px 20px 0px;
+		text-align: center;
+		text-align: center;
+		line-height: 28px;
+	}
+	
+	#service .container ul.our-service
+	{
+	     list-style: none;
+		 margin: 50px 0px 0px 0px;
+		 padding: 0px;
+	     
+	}
+	#service .container ul.our-service li
+	{
+	     float: left;
+	     width: 320px;
+		 margin-right: 50px;/*de cac the li cach nhau 50px ve ben phai*/
+		 margin-bottom: 50px;/*de the li tren va li duoi cach nhau 50px*/
+		 
+	}
+	
+	#service .container ul.our-service li .icon
+	{
+	     text-align: center;
+		 
+	}
+	
+	#service .container ul.our-service li h2
+	{
+	     text-align: center;
+		 color: #233e62;
+		 font-size: 20px;   
+		 margin-bottom: 20px;
+		 margin-top: 20px; 
+	}
+	
+	#service .container ul.our-service li p
+	{
+	      color: gray;
+		  line-height: 28px;
+		  text-align: center;
+		  
+	}
+	
+	#service .container ul.our-service li .icon span.fab fa-atlassian
+	{
+	      
+		  color: #1b9ce3;
+		  font-size: 50px;
+		  
+	}
+	
+	#project
+	{
+	     width: 100%;
+		 
+	}
+	#project .container
+	{
+	    width: 1280px;
+		margin: 30px 0px 0px 0px;
+		padding: 20px;
+	}
+	#project .container  h2
+	{
+	    text-align: center;
+		font-weight: 700;
+		padding-bottom: 20px;
+		font-size:24px;
+	      
+		  
+	}
+	#project .container p
+	{
+	    text-align: center;
+		color: gray; 
+	
+	}
+	
+	#project .container ul.our-project
+	{
+	    margin: 15px 0px 0px 0px;
+		padding: 0px;
+		list-style: none;
+		
+	    
+		
+	}	
+		
+	#project .container ul.our-project li
+	{
+	    float: left;
+		width: 310px;
+		
+	}
+	#project .container ul.our-project li img
+	{
+	    height: 230px;
+		width: 310px;
+	    
+	}
+	
+	#footer
+	{
+	    width: 100%;
+		clear: both;
+	}
+	#footer .container
+	{
+	    width: 1140px;
+		margin: 50px auto;
+		padding-top: 40px;
+		height: 800px;
+		
+		
+	}
+	#footer .container h2
+	{
+	    text-align: center;
+		color: #233e62;
+		font-weight: 700;
+		padding-bottom: 20px;
+		padding-left: 90px;
+		font-size: 24px;
+	 
+	}
+	#footer .container p
+	{
+	    color: gray;
+		text-align: center;
+		margin: 0px auto;
+		padding-left: 40px;
+		padding-bottom: 25px;
+		padding-right: 40px;
+    
+	}
+	#footer .container ul.our-footer
+	{
+	   margin: 20px 50px 30px 70px ;
+	   padding: 0px;
+	   list-style: none;
+	   /*border: 1px solid black;*/
+	}
+	#footer .container ul.our-footer li
+	{
+	    float: left;
+		width: 320px;
+		height: 600px;
+		border: 1px solid /*#57CFDD;*/ black; 
+		padding-bottom: 200px;
+		margin-right: 20px;
+	}
+	#footer .container ul.our-footer li img
+	{
+	    width: 318px;
+		height: 250px;
+		padding-bottom: 15px;
+	 
+	}
+	#footer .container ul.our-footer li h3
+	{
+	    margin-left: 30px;
+	    text-align: justify;
+		font-size: 15px;
+		margin-right: 60px;
+	}
+	#footer .container ul.our-footer li p
+	{
+	    margin-top: 10px;
+	    color: gray;
+		font-size: 12px;
+		padding: 0px;
+		text-align: justify;
+		margin-left: 30px;
+		line-height: 28px;	
+		
+		
+	}
+	#footer .container ul.our-footer li a.special
+	{
+	    display: block;
+		border: 1px solid #003399;
+		border-radius: 40px;
+		font-size: 16px;
+		width: 120px;
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+		background: #1b9ce3;
+		color:#FFFFFF;
+		margin: 20px;
+		color: #FF6666
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</style>
+	
+	
+</head>
+<body>
+
+	<div id="header">
+		<div class="container">
+			<div class="logo">
+			   <a href="">Suntech Channel</a><!--Khi click vao logo se bi chuyen trang-->
+			</div>
+			<div class="contact-info">
+				<ul>
+					<li><!--item 1-->
+						<div class="contact-icon">
+							<span class="fa fa-paper-plane-o"></span>
+						</div>
+						<div class="contact-text">
+							<label>Email</label>
+							<span>YourEmail@gmail.com</span>
+						</div>
+					</li>
+					
+					<li><!--Item 2-->
+						<div class="contact-icon">
+							<span class="fa fa-phone"></span>
+						</div>
+						<div class="contact-text">
+							<label>Call</label><!--ten nhan phan tu-->
+							<span>(1)-639 997 4542</span>
+						</div>
+					</li>
+					
+					<li>
+						<a href="" class="register">Free register</a>
+					</li>
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!--Start Menu-->
+	<div id="nav">
+		<div class="container">
+		   <ul class="menu">
+			 <li><a href="">Home</a></li>
+			 <li><a href="">About</a></li>
+			 <li><a href="">News</a></li>
+			 <li><a href="">Product</a></li>
+			 <li><a href="">Service</a></li>
+			 <li><a href="">Blog</a></li>
+			 <li><a href="">Contact</a></li>	
+		  </ul>
+		  
+		  <div class="form-search">
+		  	 <input type="text" class="keyword" placeholder="Search" />
+			 <button type="submit" class="btn-search">
+			 	<span class="fa fa-search"></span>
+			</button>
+		  </div>
+		</div>
+	</div>
+	<!--End Menu-->
+	
+	<div id="banner">
+		<img src="https://timviec365.vn/pictures/news/2019/04/15/bfe1555324941.jpg" />
+		<div class="overlay"></div><!---the div nham lam cho anh hien thi img mo di-. Opacity hien thi do sang cua thanh phan-->
+	</div>
+	
+	<div id="feature">
+		<div class="container">
+			<div class="feature-left">
+				<h2 class="feature-title">Our Main Features</h2>
+				<p class="desc">Another important feature of a company is the capital. A company can’t exist without capital. The capital of the company can be provided by a single person or by several members. The shares of a company can be transferred easily from one shareholder to another shareholder.</p>
+				<div class="card active-card">
+					<div class="icon active-icon">
+						<span class="fab fa-atlassian"></span>
+					</div>
+					<h2 class="text-active">Organization</h2>
+					<p class="text-active">Steps Research the industry and your local market. Volunteer your time to get experience and build a portfolio. Work on your business and interpersonal skills. Look for a job in an organizing related field.</p>
+					
+				</div>
+				
+				<div class="card">
+					<div class="icon">
+						<span class="fab fa-atlassian"></span>
+					</div>
+					<h2>Organization</h2>
+					<p>Steps Research the industry and your local market. Volunteer your time to get experience and build a portfolio. Work on your business and interpersonal skills. Look for a job in an organizing related field.</p>
+					
+				</div>
+				
+				<div class="card">
+					<div class="icon">
+						<span class="fab fa-atlassian"></span>
+					</div>
+					<h2>Organization</h2>
+					<p>Steps Research the industry and your local market. Volunteer your time to get experience and build a portfolio. Work on your business and interpersonal skills. Look for a job in an organizing related field.</p>
+					
+				</div>
+				
+				<div class="card">
+					<div class="icon">
+						<span class="fab fa-atlassian"></span>
+					</div>
+					<h2>Organization</h2>
+					<p>Steps Research the industry and your local market. Volunteer your time to get experience and build a portfolio. Work on your business and interpersonal skills. Look for a job in an organizing related field.</p>
+					
+				</div>
+
+			</div>
+			<div class="feature-right">
+				<img src="https://www.roberthalf.com/sites/default/files/2018-11/teamwork-in-the-workplace-rh.jpg" />
+				<h3>Read our success story</h3>
+				<p>Steps Research the industry and your local market. Volunteer your time to get experience and build a portfolio. Work on your business and interpersonal skills. Look for a job in an organizing related field.</p>
+				<a href="" class="contact-us">Contact us</a>
+			</div>
+		
+		</div>
+	</div>
+	
+	<!--Guidance-->
+	<div class="guidance">
+		<h2>You Always Have The Best Guidance</h2>
+	</div>
+	
+	<!--Service-->
+	<div id="service">
+	    <div class="container">
+		  <h3>Our Best Services</h3>
+		  <p class="desc">We can help your organisation to move to the cloud; turn collaboration into part of your culture; improve your contact centres; transform your customer service and simplify your network. All with security built-in, not bolted on.</p>
+		  
+		  <ul class="our-service">
+		     <li>
+			      <div class="icon">
+				      <span class="far fa-address-card"></span>
+					  <h2>Our Best Service</h2>
+					  <p>Improve your contact centres; transform your customer service and simplify your network. All with security                         built-in, not bolted on.</p>
+				  </div>
+			 </li>
+			 
+			 <li>
+			      <div class="icon">
+				      <span class="far fa-address-card"></span>
+					  <h2>Our Best Service</h2>
+					  <p>Improve your contact centres; transform your customer service and simplify your network. All with security                         built-in, not bolted on.</p>
+				  </div>
+			 </li>
+			 
+			 <li>
+			      <div class="icon">
+				      <span class="far fa-address-card"></span>
+					  <h2>Our Best Service</h2>
+					  <p>Improve your contact centres; transform your customer service and simplify your network. All with security                         built-in, not bolted on.</p>
+				  </div>
+			 </li>
+			 
+			 <li>
+			      <div class="icon">
+				      <span class="far fa-address-card"></span>
+					  <h2>Our Best Service</h2>
+					  <p>Improve your contact centres; transform your customer service and simplify your network. All with security                         built-in, not bolted on.</p>
+				  </div>
+			 </li>
+			 
+			 <li>
+			      <div class="icon">
+				      <span class="far fa-address-card"></span>
+					  <h2>Our Best Service</h2>
+					  <p>Improve your contact centres; transform your customer service and simplify your network. All with security                         built-in, not bolted on.</p>
+				  </div>
+			 </li>
+			 
+			 <li>
+			      <div class="icon">
+				      <span class="far fa-address-card"></span>
+					  <h2>Our Best Service</h2>
+					  <p>Improve your contact centres; transform your customer service and simplify your network. All with security                         built-in, not bolted on.</p>
+				  </div>
+			 </li>
+		  </ul>
+		</div>
+	</div>
+	
+	<!--Guidance-->
+	<div class="guidance">
+	     <h2>You Always Have The Best Guidance</h2>
+	</div>
+	
+	<!--Project-->
+	<div id="project">
+	   <div class="container">
+		 <h2>Our Recent Project</h2>
+		 <p>Separated they live in. A small river named Duden flows by their place and supplies it with the necessare resources.</p>
+		  <ul class="our-project">
+			 <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHhO1zc0ntI2dBfEnMMJxI__zn4aRmIZ6alA&usqp=CAU"></li>
+			 <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScyglxQaLfS23a9H3sJ566ZVmnoAJmEKd-jg&usqp=CAU"></li>
+			 <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmVrwjim_aUxvKVg6nHySCM0XLl8Vh20xaFw&usqp=CAU"/></li>
+			 <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKhatHdgRTPfufdrD32pO_7gn1kV3LzeGswA&usqp=CAU"/></li>
+			 <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTm4j0qNj4k2lnLsH3sTf9q_iiJK1n1-i4lA&usqp=CAU"/></li>
+			 <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwcHFjmIb1KdbmIe6QfxE1aZXZ_UX0Pay2NQ&usqp=CAU"/></li>
+			 <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKCq3a3hUbjztDaktq3Z0uM8zbm7JrHgankw&usqp=CAU"/></li>
+			 <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1-ihV19J6UIOHugdqgd5HNYPnG-isT_0nTw&usqp=CAU"/></li>
+		  </ul>
+		</div>
+	</div>
+	
+	<div id="footer">
+	     <div class="container">
+		      <h2>Recent Blog</h2>
+			  <p>We built Saskatchewan’s favourite networks so you can stay close to your people who matter most. Whether you’re overseas or just around the corner, we make sure you’re always connected to your friends, family, and your world.</p>
+			  <ul class="our-footer">
+			      <li>
+				     <img src="https://resize.hswstatic.com/w_1024/gif/computer-keyboard-2.jpg" />
+					 <h3>Finance and Legal Working Streams Occur Throughout</h3>
+					 <p>A broad variety of legal work is performed at our office, including legislative drafting, tax, litigation, prosecutions, corporate and commercial law, securities law and pension law.</p>
+					 <a href="" class="special">Read more</a>
+				  </li>
+				  
+				  <li>
+				      <img src="https://s3-us-west-2.amazonaws.com/prosky/careerbuzz/articles/image_prevs/000/000/231/normal/4721.jpg?1566246645" />
+					 <h3>Finance and Legal Working Streams Occur Throughout</h3>
+					 <p>A broad variety of legal work is performed at our office, including legislative drafting, tax, litigation, prosecutions, corporate and commercial law, securities law and pension law.</p>
+					 <a href="" class="special">Read more</a>
+				  </li>
+				  
+				  <li>
+				      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlxR3I3c13m1Rel5c-Hi1-leBofiFcGvSBPA&usqp=CAU" />
+					 <h3>Finance and Legal Working Streams Occur Throughout</h3>
+					 <p>A broad variety of legal work is performed at our office, including legislative drafting, tax, litigation, prosecutions, corporate and commercial law, securities law and pension law.</p>
+					 <a href="" class="special">Read more</a>
+				 </li>
+			  </ul>
+			  
+		 </div>
+	</div>
+</body>
+</html>
+
+	
+	
